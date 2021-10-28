@@ -1,0 +1,4 @@
+/home/julie/Bureau/Big Data Frameworks/hadoop-examples-mapreduce/src/main/java/com/opstty/mapper/TokenizerMapper.java
+/home/julie/Bureau/Big Data Frameworks/hadoop-examples-mapreduce/src/main/java/com/opstty/AppDriver.java
+/home/julie/Bureau/Big Data Frameworks/hadoop-examples-mapreduce/src/main/java/com/opstty/reducer/IntSumReducer.java
+/home/julie/Bureau/Big Data Frameworks/hadoop-examples-mapreduce/src/main/java/com/opstty/job/WordCount.java
