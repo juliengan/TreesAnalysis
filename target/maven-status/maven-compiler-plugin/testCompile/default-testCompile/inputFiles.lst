@@ -1,2 +1,2 @@
-/home/julie/Bureau/Big Data Frameworks/hadoop-examples-mapreduce/src/test/java/com/opstty/mapper/TokenizerMapperTest.java
-/home/julie/Bureau/Big Data Frameworks/hadoop-examples-mapreduce/src/test/java/com/opstty/reducer/IntSumReducerTest.java
+/home/julie/Bureau/Big Data Frameworks/YARN_JAVA_MR/src/test/java/com/opstty/mapper/TokenizerMapperTest.java
+/home/julie/Bureau/Big Data Frameworks/YARN_JAVA_MR/src/test/java/com/opstty/reducer/IntSumReducerTest.java
