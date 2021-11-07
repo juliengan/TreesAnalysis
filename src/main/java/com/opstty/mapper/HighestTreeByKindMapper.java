@@ -13,7 +13,7 @@ public class HighestTreeByKindMapper extends Mapper<Object, Text, Text, FloatWri
         if (curr_line != 0) {
             try {
                 Float height = Float.parseFloat(value.toString().split(";")[6]);
-                context.write(new Text(value.toString().split(";")[3]), new FloatWritable(height));
+                context.write(new Text(value.toString().split(";")[2]), new FloatWritable(height));
             } catch (NumberFormatException | IOException ex) {
                 // If the value is not a float, skip it by catching the error from the parseFloat() method
             }
