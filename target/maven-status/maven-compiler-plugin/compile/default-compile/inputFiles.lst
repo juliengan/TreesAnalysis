@@ -2,7 +2,10 @@
 /home/julie/Bureau/Big Data Frameworks/YARN_JAVA_MR/src/main/java/com/opstty/job/HighestTreeByKind.java
 /home/julie/Bureau/Big Data Frameworks/YARN_JAVA_MR/src/main/java/com/opstty/job/DistinctDistricts.java
 /home/julie/Bureau/Big Data Frameworks/YARN_JAVA_MR/src/main/java/com/opstty/reducer/TreesReducer.java
+/home/julie/Bureau/Big Data Frameworks/YARN_JAVA_MR/src/main/java/com/opstty/reducer/DistrictMostTreesReducer2.java
 /home/julie/Bureau/Big Data Frameworks/YARN_JAVA_MR/src/main/java/com/opstty/reducer/TreeKindCountReducer.java
+/home/julie/Bureau/Big Data Frameworks/YARN_JAVA_MR/src/main/java/com/opstty/job/DistrictMostTrees2.java
+/home/julie/Bureau/Big Data Frameworks/YARN_JAVA_MR/src/main/java/com/opstty/mapper/DistrictMostTreesMapper2.java
 /home/julie/Bureau/Big Data Frameworks/YARN_JAVA_MR/src/main/java/com/opstty/reducer/DistrictOldestTreeReducer.java
 /home/julie/Bureau/Big Data Frameworks/YARN_JAVA_MR/src/main/java/com/opstty/mapper/TokenizerMapper.java
 /home/julie/Bureau/Big Data Frameworks/YARN_JAVA_MR/src/main/java/com/opstty/mapper/TreesMapper.java

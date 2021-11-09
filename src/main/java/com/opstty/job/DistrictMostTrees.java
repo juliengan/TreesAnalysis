@@ -7,6 +7,7 @@ import com.opstty.reducer.HighestTreeByKindReducer;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.FloatWritable;
+import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -23,11 +24,24 @@ public class DistrictMostTrees {
         }
         Job job = Job.getInstance(conf, "districtMostTrees");
         job.setJarByClass(DistrictMostTrees.class);
+
+        // Two MapReduce phases =>
+
+
+        // 1) Mapper1 : distinct district / arrondissement ; Reducer1 : (district, nb_district)
+        //retrieves the distinctDistrict reducer (TreesReducer) output (pair of (district, nb_trees) => DistinctDistricts
         job.setMapperClass(DistrictMostTreesMapper.class);
         job.setCombinerClass(DistrictMostTreesReducer.class);
         job.setReducerClass(DistrictMostTreesReducer.class);
-        job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(FloatWritable.class);
+
+        // 2) Mapper2 : takes in input Reducer1 => outputs pairs with Null keys ; Reducer2 : outputs the best pair
+        // Reducer input : (district, nb_trees) with NullWritable keys
+        /*job.setMapperClass(DistrictMostTreesMapper.class);
+        job.setCombinerClass(DistrictMostTreesReducer.class);
+        job.setReducerClass(DistrictMostTreesReducer.class);*/
+
+        job.setOutputKeyClass(IntWritable.class);
+        job.setOutputValueClass(IntWritable.class);
         for (int i = 0; i < otherArgs.length - 1; ++i) {
             FileInputFormat.addInputPath(job, new Path(otherArgs[i]));
         }

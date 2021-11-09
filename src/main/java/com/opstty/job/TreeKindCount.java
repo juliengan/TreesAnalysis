@@ -6,6 +6,7 @@ import com.opstty.reducer.SpeciesReducer;
 import com.opstty.reducer.TreeKindCountReducer;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
@@ -27,7 +28,7 @@ public class TreeKindCount {
         job.setCombinerClass(TreeKindCountReducer.class);
         job.setReducerClass(TreeKindCountReducer.class);
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(NullWritable.class);
+        job.setOutputValueClass(IntWritable.class);
         for (int i = 0; i < otherArgs.length - 1; ++i) {
             FileInputFormat.addInputPath(job, new Path(otherArgs[i]));
         }

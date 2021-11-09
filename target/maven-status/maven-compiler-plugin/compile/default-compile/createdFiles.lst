@@ -1,10 +1,13 @@
 com/opstty/job/DistrictOldestTree.class
 com/opstty/reducer/TreesReducer.class
+com/opstty/reducer/DistrictMostTreesReducer2.class
 com/opstty/reducer/IntSumReducer.class
+com/opstty/mapper/DistrictMostTreesMapper2.class
 com/opstty/reducer/DistrictMostTreesReducer.class
 com/opstty/reducer/HighestTreeByKindReducer.class
 com/opstty/mapper/TreeSortHeightMapper.class
 com/opstty/mapper/TreeKindCountMapper.class
+com/opstty/job/DistrictMostTrees2.class
 com/opstty/reducer/TreeKindCountReducer.class
 com/opstty/reducer/SpeciesReducer.class
 com/opstty/mapper/HighestTreeByKindMapper.class
