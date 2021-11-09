@@ -6,8 +6,7 @@ import com.opstty.reducer.DistrictMostTreesReducer;
 import com.opstty.reducer.DistrictMostTreesReducer2;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.FloatWritable;
-import org.apache.hadoop.io.Text;
+import org.apache.hadoop.io.*;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
@@ -39,8 +38,8 @@ public class DistrictMostTrees2 {
         job.setCombinerClass(DistrictMostTreesReducer2.class);
         job.setReducerClass(DistrictMostTreesReducer2.class);
 
-        job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(FloatWritable.class);
+        job.setOutputKeyClass(NullWritable.class);
+        job.setOutputValueClass(MapWritable.class);
         for (int i = 0; i < otherArgs.length - 1; ++i) {
             FileInputFormat.addInputPath(job, new Path(otherArgs[i]));
         }

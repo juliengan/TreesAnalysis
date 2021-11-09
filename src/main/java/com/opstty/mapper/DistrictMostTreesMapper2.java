@@ -1,6 +1,8 @@
 package com.opstty.mapper;
 
 import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.MapWritable;
+import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
@@ -14,17 +16,19 @@ import java.io.IOException;
 
  *******************************************************************************/
 
-public class DistrictMostTreesMapper2 extends Mapper<Object, Text, IntWritable, IntWritable> {
+public class DistrictMostTreesMapper2 extends Mapper<Object, Text, NullWritable, MapWritable>{
     public int curr_line = 0;
 
     public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
         if (curr_line != 0) {
             try {
-                context.write(new IntWritable(Integer.parseInt(value.toString().split(";")[1])), new IntWritable(1));
-            } catch (NumberFormatException | IOException ex) {
-                System.err.println("error from the parseFloat() method");
+                MapWritable map = new MapWritable();
+                map.put(value, new IntWritable(1));
+                context.write(NullWritable.get(), map);
             }
-        }
-        curr_line++;
+            // The year has to be an integer
+            catch (NumberFormatException ex) {
+            }
+        } curr_line++;
     }
 }

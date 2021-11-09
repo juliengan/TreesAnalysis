@@ -20,7 +20,8 @@ public class DistrictOldestTreeReducer extends Reducer<NullWritable, MapWritable
 
         int min_year = district_years.stream().map((arr) -> arr[1]).min(Integer::compare).get();
 
-        district_years.stream().filter(arr -> arr[1] == min_year).map(arr -> arr[0]).distinct().forEach((district) -> { try {
+        district_years.stream().filter(arr -> arr[1] == min_year).map(arr -> arr[0]).distinct().forEach((district) -> {
+            try {
             context.write(new IntWritable(min_year), new IntWritable(district));
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();

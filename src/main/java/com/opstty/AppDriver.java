@@ -34,7 +34,7 @@ public class AppDriver {
                     "A map/reduce program that returns the (districts, nb_trees) pairs.");
 
             programDriver.addClass("districtMostTrees2", DistrictMostTrees2.class,
-                    "A map/reduce program that returns the district containing he most trees.");
+                    "A map/reduce program that returns the district containing the most trees.");
 
             exitCode = programDriver.run(argv);
         } catch (Throwable throwable) {
