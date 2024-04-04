@@ -1881,7 +1881,3 @@ Zelkova	30.0
 ```bash
 [julie.ngan@hadoop-edge01 ~]$ launch_job districtMostTrees2 districtMostTrees5/part-r-00000 districtMostTreesFinal
 ```
-
-```bash
-```
-
