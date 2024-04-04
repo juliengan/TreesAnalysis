@@ -213,6 +213,8 @@ Caused by: java.util.zip.ZipException: error in opening zip file
 		Bytes Written=14251
 ```
 
+
+### Directory files' size and counts
 ```bash
 [julie.ngan@hadoop-edge01 target]$ hdfs dfs -cat count/part-r-00000
 (48.8183933679,	1
